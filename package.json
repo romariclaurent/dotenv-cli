@@ -1,24 +1,15 @@
 {
-  "name": "dotenv-cli",
-  "description": "A global executable to run applications with the ENV variables loaded by dotenv",
-  "version": "1.1.1",
-  "author": "caske33",
+  "name": "dotenv-extended-export",
+  "description": "Sourcing .env into your shell.",
+  "version": "1.0.0",
+  "author": "romariclaurent",
   "bin": {
-    "dotenv": "./cli.js"
+    "dotenv-extended-export": "./cli.js"
   },
   "dependencies": {
-    "cross-spawn": "^4.0.0",
-    "dotenv": "^2.0.0",
-    "minimist": "^1.1.3"
-  },
-  "devDependencies": {
-    "standard": "^5.0.2"
+    "dotenv-extended": "^1.0.3",
   },
   "license": "MIT",
   "main": "index.js",
-  "preferGlobal": true,
-  "repository": "caske33/dotenv-cli",
-  "scripts": {
-    "lint": "standard"
-  }
+  "repository": "romariclaurent/dotenv-extended-export"
 }

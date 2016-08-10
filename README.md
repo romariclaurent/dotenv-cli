@@ -1,30 +1,27 @@
-# dotenv-cli
+# dotenv-extended-export
 
-## Installing
+Source & export `.env` into your shell.
+Adds `export` statements to each line of a [dotenv] `.env` file, for defining
+any variables therein in your shell.
 
-```bash
-$ npm install -g dotenv-cli
+## Install
+
+```
+npm i -g dotenv-extended-export
 ```
 
-## Usage
+## Use
 
-```bash
-$ dotenv <command with arguments>
+```
+source <(dotenv-extended-export)
+```
+## Example
+
+```shell
+# .env
+COLOR=red
 ```
 
-This will load the variables from the .env file in the current working directory and then run the command (using the new set of environment variables)
+    $ source <(dotenv-extended-export) echo $COLOR
 
-Another .env file could be specified using the -e flag:
-```bash
-$ dotenv -e .env2 <command with arguments>
-```
-
-If you want to check the value of an environment variable, use the `-p` argument
-```bash
-$ dotenv -p NODE_ENV
-```
-
-## License
-
-[MIT](https://en.wikipedia.org/wiki/MIT_License)
-
+[dotenv-extended]: https://github.com/keithmorris/node-dotenv-extended

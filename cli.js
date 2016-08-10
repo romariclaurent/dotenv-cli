@@ -1,16 +1,10 @@
 #!/usr/bin/env node
 
-var spawn = require('cross-spawn')
-var path = require('path')
-
-var argv = require('minimist')(process.argv.slice(2))
-var dotenv = require('dotenv')
-
-dotenv.load({path: path.resolve(argv.e || '.env')})
-
-if (argv.p) {
-  console.log(process.env[argv.p])
-  process.exit()
-}
-
-spawn(argv._[0], argv._.slice(1), {stdio: 'inherit'})
+var dotenv = require('dotenv-extended');
+var config = dotenv.load();
+var shell = Object.keys(config)
+  .reduce(function(out, key) {
+    return out.concat('export ' + key + '=' + config[key]);
+  }, [])
+  .join('\n');
+console.log(shell);
